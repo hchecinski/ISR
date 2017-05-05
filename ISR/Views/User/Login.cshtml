@@ -1,0 +1,19 @@
+﻿@model ISR.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login","User"))
+{
+    @Html.LabelFor(a => a.Login)
+    @Html.TextBoxFor(a => a.Login)
+
+    @Html.LabelFor(a => a.Password, "Hasło")
+    @Html.TextBoxFor(a => a.Password)
+
+    <input type="submit" value="Wyślij" />
+}

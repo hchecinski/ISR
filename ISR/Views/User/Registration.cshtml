@@ -1,0 +1,23 @@
+﻿@model ISR.Models.User
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+@using (Html.BeginForm("Registration","User"))
+{
+    @Html.LabelFor(a => a.Login)
+    @Html.TextBoxFor(a => a.Login)
+
+    @Html.LabelFor(a => a.Password, "Hasło")
+    @Html.TextBoxFor(a => a.Password)
+
+    @Html.LabelFor(a => a.Email)
+    @Html.TextBoxFor(a => a.Email)
+
+    <input type="submit" value="Wyślij" />
+}
+
+

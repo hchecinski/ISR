@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Question</h2>
+
+@if(ViewBag.Email != null) { 
+    <p>Dlaczego chcesz się zarejestrować skoro twoja sesja jeszcze nie wygasła? A twój email w sesji to: </p>
+}
+
+@ViewBag.Email
+
+    @using (Html.BeginForm("Loginout", "User"))
+    {
+        <input type="submit" value="Wyślij" />
+    }
