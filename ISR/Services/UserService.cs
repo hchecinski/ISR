@@ -9,9 +9,15 @@ namespace ISR.Services
 {
     public class UserService
     {
+        Repository<User> Repo;
         UserRepository ur;
+
+        private const string ADD_USER = "dbo.User_AddUser";
+        private const string GET_USER_BY_LOGIN = "dbo.User_GetUserByLogin";
+
         public UserService()
         {
+            Repo = new Repository<User>();
             ur = new UserRepository();
         }
         public void AddUser(User userParam)
@@ -22,7 +28,8 @@ namespace ISR.Services
         //Logowanie urzytkownika.
         public User GetUser(User userParam)
         {
-            return ur.GetUser(userParam);
+            return Repo.GetItem(new { Login = userParam.Login, Password = userParam.Password }, GET_USER_BY_LOGIN);
+            //return ur.GetUser(userParam);
         }
     }
 }

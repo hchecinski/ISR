@@ -42,5 +42,13 @@ namespace ISR.Repositories
         {
             throw new NotImplementedException();
         }
+
+        //public T GetItem(T userParam)
+        //{
+        //    using (SqlConnection db = new SqlConnection(connectionString))
+        //    {
+        //        return db.Query<User>(GET_USER_BY_LOGIN, new { Login = userParam.Login, Password = userParam.Password }, commandType: CommandType.StoredProcedure).SingleOrDefault();
+        //    }
+        //}
     }
 }
